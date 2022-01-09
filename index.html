@@ -16,6 +16,8 @@
 
             socket.on('my_response', function(msg, cb) {
                 $('#log').append('<br>' + $('<div/>').text('logs #' + msg.count + ': ' + msg.data).html());
+                $('#log_info').append('<br>' + $('<div/>').text('logs #' + msg.count + ': ' + msg.cpu +  ' : ' + msg.client_ip ).html());
+                
                 if (cb)
                     cb();
             });
@@ -52,5 +54,6 @@
     </form>
     <h2 style="background-color:white;">Logs</h2>
     <div id="log" ></div>
+    <div id="log_info" ></div>
 </body>
 </html>
